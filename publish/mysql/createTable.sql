@@ -1,0 +1,27 @@
+DROP TABLE IF EXISTS `goods`;
+CREATE TABLE `goods` (
+  `goods_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `goods_name` varchar(255) NOT NULL COMMENT '商品名称',
+  `goods_price` decimal(10,2) NOT NULL DEFAULT '0.00' COMMENT '商品价格',
+  `goods_number` int(8) unsigned NOT NULL DEFAULT '0' COMMENT '商品数量',
+  `goods_weight` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT '商品重量',
+  `cat_id` varchar(255) NOT NULL DEFAULT '0' COMMENT '类型id',
+  `goods_introduce` text COMMENT '商品详情介绍',
+  `goods_big_logo` char(128) NOT NULL DEFAULT '' COMMENT '图片logo大图',
+  `goods_small_logo` char(128) NOT NULL DEFAULT '' COMMENT '图片logo小图',
+  `is_select` enum('0','1') NOT NULL DEFAULT '0' COMMENT '0:未选中 1:选中',
+  `add_time` int(11) NOT NULL COMMENT '添加商品时间',
+  `upd_time` int(11) NOT NULL COMMENT '修改商品时间',
+  `delete_time` int(11) DEFAULT NULL COMMENT '软删除标志字段',
+  `cat_one_id` varchar(255) DEFAULT '0' COMMENT '一级分类id',
+  `cat_two_id` varchar(255) DEFAULT '0' COMMENT '二级分类id',
+  `cat_three_id` varchar(255) DEFAULT '0' COMMENT '三级分类id',
+  `cart_number` int(11) unsigned DEFAULT '0' COMMENT '热卖数量',
+  `is_promote` smallint(5) DEFAULT '0' COMMENT '是否促销',
+  `goods_state` int(11) DEFAULT '0' COMMENT '商品状态 0: 未通过 1: 审核中 2: 已审核',
+  PRIMARY KEY (`goods_id`),
+  UNIQUE KEY `goods_name` (`goods_name`),
+  KEY `goods_price` (`goods_price`),
+  KEY `add_time` (`add_time`),
+  KEY `goods_name_2` (`goods_name`)
+) ENGINE=InnoDB AUTO_INCREMENT=927 DEFAULT CHARSET=utf8 COMMENT='商品表';

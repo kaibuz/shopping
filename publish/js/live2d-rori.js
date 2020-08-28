@@ -1,0 +1,1 @@
+"use strict";L2Dwidget.init({model:{jsonPath:"https://unpkg.com/live2d-widget-model-z16@latest/assets/z16.model.json",scale:1},display:{position:"right",width:150,height:300,hOffset:0,vOffset:-20},mobile:{show:!0,scale:.5},react:{opacityDefault:.9,opacityOnHover:.2}});
